@@ -1,45 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Student Registration</title>
-</head>
-<body>
+<form action="/register" method="POST">
+    @csrf
 
-    <h2>Student Registration Form</h2>
+    <input type="text" name="name" placeholder="Name">
+    <input type="email" name="email" placeholder="Email">
+    <input type="number" name="age" placeholder="Age">
 
-    @if ($errors->any())
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li style="color: red;">{{ $error }}</li>
-            @endforeach
-        </ul>
-    @endif
-    
-    <form action="/register" method="POST">
-        @csrf
-
-        <label>Student Name:</label>
-        <input type="text" name="name">
-        <br><br>
-
-        <label>Email:</label>
-        <input type="email" name="email">
-        <br><br>
-
-        <label>Age:</label>
-        <input type="number" name="age">
-        <br><br>
-
-        <label>Course:</label>
-        <select name="course">
-            <option value="Laravel">Laravel</option>
-            <option value="PHP">PHP</option>
-            <option value="Python">Python</option>
-        </select>
-        <br><br>
-
-        <button type="submit">Register</button>
-    </form>
-
-</body>
-</html>
+    <button type="submit">Register</button>
+</form>

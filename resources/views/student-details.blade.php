@@ -12,7 +12,6 @@
     <p>Name: {{ $name }}</p>
     <p>Email: {{ $email }}</p>
     <p>Age: {{ $age }}</p>
-    <p>Course: {{ $course }}</p>
 
     <a href="/register">Register Another Student</a>
 

@@ -1,38 +1,32 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Students List</title>
-</head>
-<body>
+@extends('layouts.master')
 
-    <h1>Students List</h1>
+@section('content')
 
-    <table border="1" cellpadding="10">
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Age</th>
-            <th>Marks</th>
-            <th>Result</th>
-        </tr>
+<h2>Students List</h2>
 
-        @foreach($students as $student)
-        <tr>
-            <td>{{ $student['id'] }}</td>
-            <td>{{ $student['name'] }}</td>
-            <td>{{ $student['age'] }}</td>
-            <td>{{ $student['marks'] }}</td>
-            <td>
-                @if($student['marks'] >= 50)
-                    Pass
-                @else
-                    Fail
-                @endif
-            </td>
-        </tr>
-        @endforeach
+<table border="1" cellpadding="10">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Marks</th>
+        <th>Result</th>
+    </tr>
 
-    </table>
+    @foreach($students as $student)
+    <tr>
+        <td>{{ $student['id'] }}</td>
+        <td>{{ $student['name'] }}</td>
+        <td>{{ $student['marks'] }}</td>
+        <td>
+            @if($student['marks'] >= 50)
+                Pass
+            @else
+                Fail
+            @endif
+        </td>
+    </tr>
+    @endforeach
 
-</body>
-</html>
+</table>
+
+@endsection
